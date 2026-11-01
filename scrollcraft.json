@@ -1,0 +1,103 @@
+{
+  "name": "Bozkırdan Cumhuriyete",
+  "description": "Beş kavram, tek bir ışık: göç, töre, kubbe, kalem ve egemenlik üzerinden bir süreklilik anlatısı.",
+  "lang": "tr",
+  "canvasAlt": "Scroll ile değişen manzara: bozkırda atlı okçu, Osmanlı silüetinde kubbe ve minareler, ardından şafakta tek yıldız.",
+  "frames": "frames",
+  "framesMobile": "frames-mobile",
+  "theme": {
+    "fontDisplay": "Bodoni Moda",
+    "fontBody": "Inter",
+    "scale": "editorial",
+    "displayWeight": 600,
+    "displayCase": "none",
+    "displayTracking": -0.02,
+    "ink": "#F4EFE4",
+    "muted": "rgba(244,239,228,0.72)",
+    "accent": "#8C2A20",
+    "accentText": "#E9C98F",
+    "ground": "#05070A",
+    "radius": 2
+  },
+  "customCss": ".eyebrow { letter-spacing: 0.22em !important; font-size: 0.75rem !important; }\n.section-content h1, .section-content h2 { text-wrap: balance; }\n.section-content p { text-wrap: pretty; }",
+  "sections": [
+    {
+      "kind": "statement",
+      "layout": "center",
+      "reveal": "mask",
+      "eyebrow": "I · Göç",
+      "heading": "Yol, yurt olur",
+      "body": "Bir topluluk gittiği yeri kendi düzeniyle kurar. Sınır haritada değil, alışkanlıktadır.",
+      "scrollHeight": 1600
+    },
+    {
+      "kind": "text",
+      "layout": "left",
+      "reveal": "stagger",
+      "eyebrow": "Töre",
+      "heading": "Söz, kılıçtan önce gelir",
+      "body": "Karar mecliste alınır, çadırda sınanır. Yönetmek, önce ikna etmeyi bilmektir.",
+      "scrollHeight": 1300
+    },
+    {
+      "kind": "spacer",
+      "scrollHeight": 800
+    },
+    {
+      "kind": "text",
+      "layout": "right",
+      "reveal": "fade",
+      "eyebrow": "Yerleşme",
+      "heading": "Çadır taşa dönüşür",
+      "body": "Göçebe durur, duvar örer. Ama ördüğü duvarın içine çadırın düzenini taşır.",
+      "scrollHeight": 1200
+    },
+    {
+      "kind": "statement",
+      "layout": "lower-third",
+      "reveal": "scale",
+      "eyebrow": "II · Kubbe",
+      "heading": "Göğe açılan taş",
+      "body": "Taş, yalnızca yükselmek için değil; ışığı içeri taşımak için yığılır.",
+      "scrollHeight": 1700
+    },
+    {
+      "kind": "text",
+      "layout": "left",
+      "reveal": "rise",
+      "eyebrow": "Kalem",
+      "heading": "Yazı, devletten uzun yaşar",
+      "body": "Her tımar, her vakıf, her vergi kayda geçer. Kaydetmeyen unutur; unutan yönetemez.",
+      "scrollHeight": 1400
+    },
+    {
+      "kind": "text",
+      "layout": "upper-third",
+      "reveal": "fade",
+      "eyebrow": "Değişim",
+      "heading": "Eski düzen cevap vermekte gecikir",
+      "body": "Matbaa, liman, tercüme. Yüzyılın dili değişirken susmak da bir cevaptır.",
+      "scrollHeight": 1300
+    },
+    {
+      "kind": "statement",
+      "layout": "center",
+      "reveal": "none",
+      "eyebrow": "III · Egemenlik",
+      "heading": "Kayıtsız, şartsız",
+      "body": "Kimseden alınmış bir yetki değil; doğrudan milletin kendisine yazılmış bir cümle.",
+      "scrollHeight": 1900
+    },
+    {
+      "kind": "text",
+      "layout": "lower-third",
+      "reveal": "rise",
+      "eyebrow": "1923",
+      "heading": "Şafak, aynı bozkırda",
+      "body": "Ok yine ufku gösteriyor. Bu kez hedef bir yurt değil, bir fikir.",
+      "ctaLabel": "Baştan oku",
+      "ctaHref": "#main",
+      "scrollHeight": 1300
+    }
+  ]
+}

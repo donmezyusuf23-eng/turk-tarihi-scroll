@@ -1,0 +1,84 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: auto; }
+body {
+  background: var(--sc-ground, #000);
+  color: var(--sc-ink, #fff);
+  font-family: var(--sc-font-body, system-ui, sans-serif);
+  overflow-x: hidden;
+}
+.skip-link { position: absolute; left: -9999px; top: 0; z-index: 100; padding: 0.75rem 1.25rem; background: var(--sc-ink, #fff); color: var(--sc-ground, #000); border-radius: 0 0 0.5rem 0; font-weight: 600; text-decoration: none; }
+.skip-link:focus { left: 0; }
+main:focus { outline: none; }
+a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:not([tabindex="-1"]):focus-visible { outline: 3px solid var(--sc-accent-text, #ede9fe); outline-offset: 3px; border-radius: 2px; }
+#scroll-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+#scroll-container { position: relative; z-index: 1; pointer-events: none; }
+.scroll-section { pointer-events: none; }
+.section-sticky { pointer-events: none; }
+.section-content { pointer-events: auto; }
+.section-content.visible { opacity: 1 !important; transform: translateY(0) !important; }
+#scroll-hint {
+  position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  color: rgba(255,255,255,0.4); font-size: 0.75rem; letter-spacing: 0.1em;
+  text-transform: uppercase; z-index: 20; transition: opacity 0.5s;
+}
+.sc-display { font-family: var(--sc-font-display, var(--sc-font-body, system-ui, sans-serif)); }
+#scroll-hint .arrow { width: 1px; height: 40px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4)); }
+#audio-mute {
+  position: fixed; top: 1rem; right: 1rem; z-index: 30;
+  background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15);
+  color: #fff; border-radius: 50%; width: 2.75rem; height: 2.75rem;
+  cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+#audio-mute:hover { background: rgba(255,255,255,0.1); }
+@media (prefers-reduced-motion: reduce) {
+  .section-content { transition: none !important; }
+  #scroll-hint { display: none; }
+}
+
+.section-content[data-reveal] { opacity: 0; will-change: opacity, transform; }
+.section-content[data-reveal="rise"] { transform: translateY(32px); }
+.section-content[data-reveal="fade"] { transform: none; }
+.section-content[data-reveal="scale"] { transform: scale(0.94); }
+.section-content[data-reveal="mask"] { clip-path: inset(0 0 100% 0); transform: none; }
+.section-content[data-reveal="none"] { opacity: 1; transform: none; }
+.section-content[data-reveal].visible {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 0 0);
+}
+.section-content[data-reveal="stagger"] > * {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.section-content[data-reveal="stagger"].visible > * { opacity: 1; transform: none; }
+.section-content[data-reveal="stagger"].visible > *:nth-child(1) { transition-delay: 0ms; }
+.section-content[data-reveal="stagger"].visible > *:nth-child(2) { transition-delay: 90ms; }
+.section-content[data-reveal="stagger"].visible > *:nth-child(3) { transition-delay: 180ms; }
+.section-content[data-reveal="stagger"].visible > *:nth-child(4) { transition-delay: 270ms; }
+.section-content[data-reveal="stagger"].visible > *:nth-child(n+5) { transition-delay: 360ms; }
+
+.sc-statement {
+  font-size: calc(clamp(2.75rem, min(11vw, 13.2vh), 9rem) * var(--sc-fit, 1));
+  font-weight: var(--sc-display-weight, 800);
+  line-height: 0.92;
+  letter-spacing: var(--sc-display-tracking, -0.045em);
+  text-transform: var(--sc-display-case, none);
+  margin: 0;
+}
+
+.sc-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.sc-signup input::placeholder { color: rgba(255,255,255,0.72); }
+@media (max-width: 480px) { .sc-signup button { flex: 1 1 100% !important; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .section-content[data-reveal],
+  .section-content[data-reveal="stagger"] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+}
